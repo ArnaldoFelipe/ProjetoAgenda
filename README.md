@@ -1,54 +1,68 @@
 Iniciar o projeto Django
 
+```
 python -m venv venv
-. venv/bin/activate
-pip install django
-django-admin startproject project .
-python manage.py startapp contact
+. venv/bin/ativar
+pip instalar django
+django-admin startproject projeto .
+contato python manager.py startapp
+
+```
+
 Configurar o git
 
+```
 git config --global user.name 'Seu nome'
 git config --global user.email 'seu_email@gmail.com'
-git config --global init.defaultBranch main
-# Configure o .gitignore
+git config --global init.defaultBranch principal
+# Configurar o .gitignore
 git init
 git add .
 git commit -m 'Mensagem'
-git remote add origin URL_DO_GIT
+git remoto adicionar URL de origem_DO_GIT
+
 Migrando para base de dados do Django
 
-python manage.py makemigrations
-python manage.py migrate
+```
+migrações python manager.py
+python manage.py migrar
+```
+
 Criando e modificando a senha de um super usuário Django
 
-python manage.py createsuperuser
-python manage.py changepassword USERNAME
+```
+python manage.py criasuperusuário
+python manage.py alterar senha NOME DE USUÁRIO
+```
+
 Trabalhando com o modelo do Django
 
-# Importe o módulo
-from contact.models import Contact
-# Cria um contato (Lazy)
-# Retorna o contato
-contact = Contact(**fields)
-contact.save()
-# Cria um contato (Não lazy)
-# Retorna o contato
-contact = Contact.objects.create(**fields)
-# Seleciona um contato com id 10
-# Retorna o contato
-contact = Contact.objects.get(pk=10)
-# Edita um contato
-# Retorna o contato
-contact.field_name1 = 'Novo valor 1'
-contact.field_name2 = 'Novo valor 2'
-contact.save()
-# Apaga um contato
-# Depende da base de dados, geralmente retorna o número
-# de valores manipulados na base de dados
-contact.delete()
-# Seleciona todos os contatos ordenando por id DESC
-# Retorna QuerySet[]
-contacts = Contact.objects.all().order_by('-id')
-# Seleciona contatos usando filtros
-# Retorna QuerySet[]
-contacts = Contact.objects.filter(**filters).order_by('-id')
+```pitão
+#Importar ou módulo
+decontato.modelosimportarContato
+#Criar um contato (Lazy)
+#Retorna o contato
+contato=Contato(**campos)
+contato.salvar()
+#Cria um contato (Não lazy)
+#Retorna o contato
+contato=Contato.objetos.criar(**campos)
+#Selecione um contato com id 10
+#Retorna o contato
+contato=Contato.objetos.obter(pk=10)
+#Edita um contato
+#Retorna o contato
+contato.campo_nome1= 'Novo valor 1'
+contato.campo_nome2= 'Novo valor 2'
+contato.salvar()
+#Apaga um contato
+#Depende da base de dados, geralmente retorna o número
+#de valores manipulados na base de dados
+contato.delete()
+#Selecionamos todos os contatos ordenando por id DESC
+#Retorna QuerySet[]
+contatos=Contato.objetos.todos().ordenar_por('-eu ia')
+#Seleciona contatos usando filtros
+#Retorna QuerySet[]
+contatos=Contato.objetos.filtro(**filtros).order_by('-eu ia')
+```
